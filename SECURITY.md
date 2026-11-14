@@ -6,7 +6,7 @@ Please do **not** report security vulnerabilities through public issues, discuss
 requests.
 
 This repository is private for now. Report vulnerabilities privately to the maintainers by email at
-**security@cairnreport.dev (TODO: confirm)**. Please include:
+**security@cairnreport.dev**. Please include:
 
 - the affected component (cairnreport.dev) and version or commit;
 - a description of the issue and its impact;
