@@ -5,8 +5,8 @@ body:
   - type: markdown
     attributes:
       value: |
-        Features are specified in the specs repository before they are built (see
-        [CONTRIBUTING.md](https://github.com/cairnreport/docs/blob/main/CONTRIBUTING.md#specs-first)). This issue starts that discussion.
+        Suggest a documentation improvement or a feature you'd like to see in Cairn Report.
+        The maintainers will triage it.
   - type: textarea
     id: problem
     attributes:
@@ -25,13 +25,5 @@ body:
     id: alternatives
     attributes:
       label: Alternatives considered
-    validations:
-      required: false
-  - type: input
-    id: requirement
-    attributes:
-      label: Related requirement
-      description: Requirement ID (R#.#) or deferred item (D#), if you know it.
-      placeholder: R6.2
     validations:
       required: false

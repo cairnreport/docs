@@ -5,16 +5,13 @@
 Please do **not** report security vulnerabilities through public issues, discussions or pull
 requests.
 
-This repository is private for now. Report vulnerabilities privately to the maintainers by email at
-**security@cairnreport.dev**. Please include:
+Report vulnerabilities privately using GitHub's **Report a vulnerability** button on this
+repository's Security tab, or by email to **security@cairnreport.dev**. Please include:
 
 - the affected component (cairnreport.dev) and version or commit;
 - a description of the issue and its impact;
 - steps to reproduce or a proof of concept;
 - any suggested fix or mitigation.
-
-When this repository becomes public, GitHub private vulnerability reporting will be enabled for it,
-and this policy will point to the "Report a vulnerability" button on the repository's Security tab.
 
 ## What to expect
 

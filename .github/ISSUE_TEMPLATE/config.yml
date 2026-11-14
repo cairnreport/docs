@@ -2,7 +2,7 @@ blank_issues_enabled: false
 contact_links:
   - name: Security vulnerability
     url: https://github.com/cairnreport/docs/blob/main/SECURITY.md
-    about: Report vulnerabilities privately as described in SECURITY.md, not in an issue.
+    about: Report vulnerabilities privately (Security tab or email), as described in SECURITY.md, not in an issue.
   - name: Documentation
     url: https://cairnreport.dev
     about: Guides and reference (not live yet).

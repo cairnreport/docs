@@ -1,15 +1,13 @@
 ## What and why
 
-<!-- What does this change and why? Link the issue, the OpenSpec change and the requirement IDs (R#.#). -->
+<!-- What does this change and why? Link the issue if there is one. -->
 
-## How it was tested
+## How it was checked
 
-<!-- Commands run and new or changed tests (named after requirement and scenario, e.g. TestR1_2_...). -->
+<!-- e.g. `make check`, preview with `make serve`. -->
 
 ## Checklist
 
-- [ ] Linked the OpenSpec change or requirement IDs, or this has no behaviour change
-- [ ] The site builds locally with `hugo` and links are not broken
-- [ ] Tests added or updated (or not needed)
-- [ ] Documentation updated (or not needed)
-- [ ] No secrets, tokens or real customer data in code, fixtures or logs
+- [ ] The site builds locally (`make check`) and links are not broken
+- [ ] Content is accurate and doesn't describe features that aren't released yet as available
+- [ ] No secrets, tokens or personal data
