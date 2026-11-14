@@ -1,10 +1,24 @@
 # Cairn Report documentation
 
-The source of <https://cairnreport.dev>, the documentation site for Cairn Report (not live yet;
-the site goes up when the repositories become public). It is a Hugo site with its own minimal
-layouts and no Node build chain.
+The source of <https://cairnreport.dev>, the documentation site for Cairn Report. It is a Hugo
+site with its own minimal layouts: no theme, no Node build chain, no JavaScript, and no analytics,
+web fonts or other third-party resources.
 
-> Status: the site skeleton arrives with milestone M0 task 1.6.
+> Status: Cairn Report is in early development. The site has a landing page; the user docs grow
+> with the first release.
+
+## Build locally
+
+```sh
+make build   # production build into public/
+make serve   # preview at http://localhost:1313 with live reload
+make check   # build, check internal links, and check that the output loads nothing external
+```
+
+On Linux (amd64/arm64) the Makefile downloads the pinned Hugo and lychee versions into `.tools/`
+and verifies their checksums. Elsewhere, install the same versions and run
+`make HUGO=hugo LYCHEE=lychee <target>`. Pushes to `main` deploy to GitHub Pages through
+`.github/workflows/pages.yml`.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). Report security issues as described in
 [SECURITY.md](SECURITY.md).

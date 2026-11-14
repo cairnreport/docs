@@ -1,0 +1,36 @@
+# Cairn Report documentation site. Site code: MIT (see LICENSE).
+baseURL = "https://cairnreport.dev/"
+locale = "en"
+title = "Cairn Report"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term", "rss"]
+
+[params]
+description = "Self-hosted test, coverage, performance and code-scanning results for any language."
+org = "https://github.com/cairnreport"
+source = "https://github.com/cairnreport/docs"
+security = "security@cairnreport.dev"
+
+[module.hugoVersion]
+min = "0.146.0"
+
+[markup.goldmark.renderer]
+unsafe = false
+
+# No third-party services: nothing in the layouts uses Hugo's built-in
+# analytics, comments or embeds, and these keep them off if one is added.
+[privacy.disqus]
+disable = true
+[privacy.googleAnalytics]
+disable = true
+[privacy.instagram]
+disable = true
+[privacy.vimeo]
+disable = true
+[privacy.x]
+disable = true
+[privacy.youtube]
+disable = true
+
+[sitemap]
+changeFreq = "weekly"

@@ -1,0 +1,43 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="wrap">
+    <img class="hero-logo" src="{{ "favicon.svg" | relURL }}" width="72" height="72" alt="">
+    <h1>{{ site.Title }}</h1>
+    <p class="lead">{{ .Params.lead }}</p>
+    <p class="status" role="note"><span class="pill warn">Status</span> {{ .Params.status }}</p>
+    <p class="actions">
+      {{ with site.GetPage "/getting-started" }}<a class="btn primary" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}
+      <a class="btn" href="{{ site.Params.org }}">Follow on GitHub</a>
+    </p>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="prose">{{ .Content }}</div>
+</section>
+
+<section class="wrap">
+  <h2>Planned features</h2>
+  <ul class="cards">
+    {{- range .Params.features }}
+    <li class="card">
+      <h3>{{ .title }}</h3>
+      <p>{{ .text | markdownify }}</p>
+    </li>
+    {{- end }}
+  </ul>
+</section>
+
+<section class="wrap">
+  <h2>Standard formats, any language</h2>
+  <p class="muted">{{ .Params.formats_intro | markdownify }}</p>
+  <table class="formats">
+    <thead><tr><th scope="col">What</th><th scope="col">Formats</th></tr></thead>
+    <tbody>
+      {{- range .Params.formats }}
+      <tr><td>{{ .kind }}</td><td>{{ .formats | markdownify }}</td></tr>
+      {{- end }}
+    </tbody>
+  </table>
+</section>
+{{ end }}

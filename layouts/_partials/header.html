@@ -1,0 +1,15 @@
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="logo" href="{{ "/" | relURL }}">
+      <img src="{{ "favicon.svg" | relURL }}" width="24" height="24" alt="">
+      <span>{{ site.Title }}</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      {{- $current := . }}
+      {{- range site.RegularPages.ByWeight }}
+      <a href="{{ .RelPermalink }}"{{ if eq . $current }} aria-current="page"{{ end }}>{{ .LinkTitle }}</a>
+      {{- end }}
+      <a href="{{ site.Params.source }}">GitHub</a>
+    </nav>
+  </div>
+</header>
