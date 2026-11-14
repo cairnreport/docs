@@ -1,0 +1,30 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    "helpers:pinGitHubActionDigests"
+  ],
+  "minimumReleaseAge": "3 days",
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Versions marked with a `# renovate: datasource=... depName=...` comment on the line above (Makefile variables, workflow env).",
+      "managerFilePatterns": [
+        "/(^|/)Makefile$/",
+        "/(^|/)\\.github/workflows/[^/]+\\.ya?ml$/"
+      ],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>[a-z-]+) depName=(?<depName>\\S+)(?: versioning=(?<versioning>\\S+))?\\s*\\n\\s*[A-Za-z0-9_]+\\s*(?::=|\\?=|=|:)\\s*[\"']?(?<currentValue>[^\\s\"']+)"
+      ]
+    }
+  ],
+  "packageRules": [
+    {
+      "description": "Hugo: one PR per release, pinned in the workflow (# renovate: comment).",
+      "matchPackageNames": [
+        "gohugoio/hugo"
+      ],
+      "groupName": "Hugo"
+    }
+  ]
+}
