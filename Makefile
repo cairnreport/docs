@@ -9,7 +9,7 @@ SHELL := /bin/bash
 .DEFAULT_GOAL := build
 
 # renovate: datasource=github-releases depName=gohugoio/hugo
-HUGO_VERSION := v0.169.0
+HUGO_VERSION := v0.170.0
 # renovate: datasource=github-releases depName=lycheeverse/lychee versioning=regex:^lychee-v(?<major>\d+)\.(?<minor>\d+)\.(?<patch>\d+)$
 LYCHEE_VERSION := lychee-v0.24.2
 
