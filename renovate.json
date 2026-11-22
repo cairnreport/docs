@@ -5,6 +5,10 @@
     "helpers:pinGitHubActionDigests"
   ],
   "minimumReleaseAge": "3 days",
+  "schedule": [
+    "before 6am on monday"
+  ],
+  "prConcurrentLimit": 2,
   "customManagers": [
     {
       "customType": "regex",
@@ -19,6 +23,18 @@
     }
   ],
   "packageRules": [
+    {
+      "description": "Weekly batch (devops S3, Actions minutes): every non-major update in one PR; the rules below that name their own group keep it.",
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "digest",
+        "pin",
+        "pinDigest"
+      ],
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-non-major"
+    },
     {
       "description": "Hugo: one PR per release, pinned in the workflow (# renovate: comment).",
       "matchPackageNames": [
