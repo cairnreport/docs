@@ -17,6 +17,11 @@ min = "0.146.0"
 [markup.goldmark.renderer]
 unsafe = false
 
+# Code blocks are plain <pre><code>: Chroma's highlighting would add inline
+# style attributes, which the page's Content-Security-Policy (style-src 'self') blocks.
+[markup.highlight]
+codeFences = false
+
 # No third-party services: nothing in the layouts uses Hugo's built-in
 # analytics, comments or embeds, and these keep them off if one is added.
 [privacy.disqus]

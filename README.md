@@ -12,13 +12,14 @@ web fonts or other third-party resources.
 ```sh
 make build   # production build into public/
 make serve   # preview at http://localhost:1313 with live reload
-make check   # build, check internal links, and check that the output loads nothing external
+make check   # build, check internal links, check that the output loads nothing external,
+             # check the visual-tracking page, and run the checkers' own tests
 ```
 
 On Linux (amd64/arm64) the Makefile downloads the pinned Hugo and lychee versions into `.tools/`
 and verifies their checksums. Elsewhere, install the same versions and run
-`make HUGO=hugo LYCHEE=lychee <target>`. Pushes to `main` deploy to GitHub Pages through
-`.github/workflows/pages.yml`.
+`make HUGO=hugo LYCHEE=lychee <target>`. The checks also need Bash and Perl. Pushes to `main`
+deploy to GitHub Pages through `.github/workflows/pages.yml`.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). Report security issues as described in
 [SECURITY.md](SECURITY.md).
