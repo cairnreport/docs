@@ -53,13 +53,15 @@ serve: $(HUGO)
 	$(HUGO) server --buildDrafts --disableFastRender --bind 127.0.0.1
 
 ## check: build, audit the output (no scripts, only allowed external URLs),
-## check internal links offline, check the deterministic-screenshots page,
-## run the checkers' fixture tests, and check the tool pins match the workflow
+## check internal links offline, check the deterministic-screenshots page and the
+## platform note (R15.7), run the checkers' fixture tests, and check the tool pins match the workflow
 check: build check-links
 	scripts/check-site.sh $(PUBLIC)
 	scripts/check-site.test.sh
 	scripts/check-visual-page.sh $(PUBLIC) content/visual/deterministic-screenshots.md
 	scripts/check-visual-page.test.sh $(PUBLIC) content/visual/deterministic-screenshots.md
+	scripts/check-platform-note.sh $(PUBLIC)
+	scripts/check-platform-note.test.sh $(PUBLIC)
 	scripts/check-pins.sh
 
 check-links: $(LYCHEE)

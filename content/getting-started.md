@@ -11,7 +11,13 @@ When the first release is out, this page will show how to:
 
 - run the server locally with Docker Compose;
 - create an upload token;
-- upload results from your CI with the `cairn` command-line tool or the Playwright reporter;
+- upload results from your CI with the [`cairn` command-line tool](/cli/) or the Playwright reporter;
 - find your first run in the UI.
 
 To follow progress, watch the [Cairn Report organisation on GitHub](https://github.com/cairnreport).
+
+## Platforms
+
+Cairn reporters run on Linux and macOS. On Windows, run them in a Linux container: Docker
+(`docker run --rm -v "${PWD}:/work" -w /work ghcr.io/cairnreport/cairn upload junit --files 'reports/*.xml'`)
+or a Linux distribution under WSL 2. Native Windows support is planned.
