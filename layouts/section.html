@@ -1,0 +1,8 @@
+{{/* Section index pages (e.g. content/cli/_index.md, the cairn page) render like a page.
+     Sections without their own page set build.render: never (content/visual/_index.md). */}}
+{{ define "main" }}
+<article class="wrap prose page">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+</article>
+{{ end }}
