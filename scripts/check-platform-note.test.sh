@@ -53,7 +53,7 @@ run() {
 note='Cairn reporters run on Linux and macOS\..*?</p>'
 
 run pass "site as built" "$gs" ''
-run pass "note with another subcommand" "$cli" 's{cairn upload junit --files \x27reports/\*\.xml\x27}{cairn upload playwright --report results.json}'
+run pass "note with another subcommand" "$cli" 's{cairn upload playwright --report results\.json}{cairn upload junit --files \x27reports/*.xml\x27}'
 run pass "note with entity-encoded quotes" "$gs" 's{"\$\{PWD\}:/work"}{&#34;\${PWD}:/work&quot;}'
 
 run fail "getting-started without the note" "$gs" "s{$note}{</p>}s" \
@@ -75,7 +75,7 @@ run fail "docker command without --rm" "$gs" 's{docker run --rm -v}{docker run -
   "$gs: no <code> element holds"
 run fail "docker command with another image" "$cli" 's{ghcr\.io/cairnreport/cairn }{cairnreport/cairn }' \
   "$cli: no <code> element holds"
-run fail "docker command without a subcommand" "$gs" 's{(ghcr\.io/cairnreport/cairn) upload junit [^<]*}{$1}' \
+run fail "docker command without a subcommand" "$gs" 's{(ghcr\.io/cairnreport/cairn) upload playwright [^<]*}{$1}' \
   "$gs: no <code> element holds"
 run fail "docker command not in a code element" "$cli" 's{<code>(docker run [^<]*)</code>}{$1}' \
   "$cli: no <code> element holds"
